@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int N,M,D;
+    scanf("%d %d %d",&N,&M,&D);
+    
+    int maxdistance=N*M;
+    int totaldistance=1000;
+    
+    if (maxdistance<D)
+    {
+        printf("-1\n");
+        return 0;
+    }
+    int refuels=0;
+    int currentdistance=maxdistance;
+    
+    while(currentdistance<totaldistance)
+    {
+        currentdistance+=maxdistance-D;
+        refuels++;
+    }
+    printf("%d\n",refuels);
+    return 0;
+}
